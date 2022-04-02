@@ -1,9 +1,9 @@
 import React from 'react';
 
-class test extends React.Component {
+class AAA extends React.Component {
   render() {
     return <>test</>;
   }
 }
 
-export default test;
+export default AAA;

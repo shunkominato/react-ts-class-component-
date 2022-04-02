@@ -37,6 +37,7 @@ module.exports = {
     },
   ],
   'react/prop-types': 'off',
+  'react/prefer-stateless-function': 'off',
   },
   settings: {
     'import/resolver': {
