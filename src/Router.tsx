@@ -7,10 +7,10 @@ import BBB from './pages/BBB';
 function Router() {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<AAA />}/>
-      <Route path="/BBB" element={<BBB />}/>
-    </Routes>
+      <Routes>
+        <Route path='/' element={<AAA />} />
+        <Route path='/BBB' element={<BBB />} />
+      </Routes>
     </BrowserRouter>
   );
 }
