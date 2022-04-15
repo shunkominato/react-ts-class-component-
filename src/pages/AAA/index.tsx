@@ -7,7 +7,7 @@ class AAA extends React.Component {
       <>
         saga
         <li>
-          <Link to='/BBB'>Home</Link>
+          <Link to='/BBB'>todoリスト</Link>
         </li>
       </>
     );
