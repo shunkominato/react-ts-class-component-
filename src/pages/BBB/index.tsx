@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { Formik } from 'formik';
 
@@ -21,21 +20,22 @@ class BBB extends React.Component<{}, State> {
       todo: e.target.value,
     })
   }
+
   render() {
     return (
       <>
         todoリスト
         <Formik
-          initialValues={{ todo: '' }}
+          initialValues={{ todo: this.state.todo }}
           onSubmit={(values) => console.log(values)}
           render={(props) => (
             <input
               name='todo'
-              value={this.state.todo}
+              value={props.values.todo}
               onChange={(e) => this.onChangeTodo(e)}
             />
           )}
-        ></Formik>
+        />
       </>
     );
   }
