@@ -5,13 +5,17 @@ type State = {
   todo: string;
 };
 
-class BBB extends React.Component<{}, State> {
+class Todo extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
     this.state = {
       todo: '',
     };
     this.onChangeTodo = this.onChangeTodo.bind(this);
+  }
+
+  componentDidMount() {
+    
   }
 
   onChangeTodo(e: React.ChangeEvent<HTMLInputElement>) {
@@ -41,4 +45,4 @@ class BBB extends React.Component<{}, State> {
   }
 }
 
-export default BBB;
+export default Todo;
