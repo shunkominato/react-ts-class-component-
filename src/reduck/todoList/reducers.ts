@@ -5,7 +5,7 @@ export const initialState = {
   todo: [] as string[],
 };
 
-export const todoReducers = (state = initialState, action: TodoListInitAction) => {
+export const todoListReducers = (state = initialState, action: TodoListInitAction) => {
   switch (action.type) {
     case types.INIT:
       return initialState
