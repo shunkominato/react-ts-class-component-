@@ -1,4 +1,4 @@
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 import * as actions from './actions';
 
 export const init = () => {

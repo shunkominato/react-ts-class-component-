@@ -1,11 +1,25 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { ThunkDispatch } from 'redux-thunk';
+import { RootState } from '../../reduck/state';
+import * as TodoListOperations from '../../reduck/todoList/operation';
+import { TodoListState } from '../../reduck/todoList/reducers';
 
-const mapStateToProps = (state: any) => ({todo: ''});
+export type StateProps = {
+  todoList: TodoListState;
+};
 
-const mapDispatchToProps = () => {
+export const mapStateToProps = (state: RootState): StateProps => ({
+  todoList: state.todoList,
+});
+
+export const mapDispatchToProps = (
+  dispatch: ThunkDispatch<any, undefined, any>
+) => ({
   init: () => {
-    
-  }
-}
+    dispatch(TodoListOperations.init());
+  },
+});
 
-export default connect(mapStateToProps)
+export type DispatchProps = ReturnType<typeof mapDispatchToProps>;
+
+export default connect(mapStateToProps, mapDispatchToProps);

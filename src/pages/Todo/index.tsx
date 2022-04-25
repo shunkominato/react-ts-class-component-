@@ -1,11 +1,13 @@
 import React from 'react';
 import { Formik } from 'formik';
+import connect, { DispatchProps, StateProps } from './container';
 
+type Props = StateProps & DispatchProps;
 type State = {
   todo: string;
 };
 
-class Todo extends React.Component<{}, State> {
+class Todo extends React.Component<Props, State> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -15,14 +17,14 @@ class Todo extends React.Component<{}, State> {
   }
 
   componentDidMount() {
-    
+    this.props.init();
   }
 
   onChangeTodo(e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(e)
+    console.log(e);
     this.setState({
       todo: e.target.value,
-    })
+    });
   }
 
   render() {
@@ -45,4 +47,4 @@ class Todo extends React.Component<{}, State> {
   }
 }
 
-export default Todo;
+export default connect(Todo);

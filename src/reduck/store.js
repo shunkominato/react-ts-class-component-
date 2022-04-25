@@ -1,13 +1,12 @@
-import { createStore } from 'redux';
-import storage from 'redux-persist/lib/storage'
-import { todoListReducers } from './todoList/reducers'
+import { applyMiddleware, createStore } from 'redux';
+import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
+import { todoListReducers } from './todoList/reducers';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [
-    'todoList',
-  ],
+  whitelist: ['todoList'],
 };
 
 export const rootReducer = combineReducers({
@@ -15,5 +14,6 @@ export const rootReducer = combineReducers({
 });
 
 export const store = createStore(
-  persistReducer(persistConfig, rootReducer)
-)
+  persistReducer(persistConfig, rootReducer),
+  applyMiddleware(thunk)
+);
