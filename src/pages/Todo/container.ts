@@ -18,6 +18,11 @@ export const mapDispatchToProps = (
   init: () => {
     dispatch(TodoListOperations.init());
   },
+
+  handleSubmit: (formValue: string) => {
+    console.log(formValue);
+    dispatch(TodoListOperations.addTodo(formValue))
+  }
 });
 
 export type DispatchProps = ReturnType<typeof mapDispatchToProps>;
