@@ -41,7 +41,9 @@ class Todo extends React.Component<Props, State> {
               onChange={(e) => this.onChangeTodo(e)}
             />
           )}
-        />
+        >
+          <button type='submit'>追加</button>
+        </Formik>
       </>
     );
   }

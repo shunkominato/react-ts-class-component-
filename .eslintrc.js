@@ -38,6 +38,10 @@ module.exports = {
   ],
   'react/prop-types': 'off',
   'react/prefer-stateless-function': 'off',
+  'react/destructuring-assignment': 0,
+  'import/prefer-default-export': 'off',
+  'default-param-last': 'off',
+  '@typescript-eslint/default-param-last': ['warn'],
   },
   settings: {
     'import/resolver': {
