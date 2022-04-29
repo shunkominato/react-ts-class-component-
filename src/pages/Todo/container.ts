@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { Action } from 'redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { RootState } from '../../reduck/state';
 import * as TodoListOperations from '../../reduck/todoList/operation';
@@ -13,16 +14,16 @@ export const mapStateToProps = (state: RootState): StateProps => ({
 });
 
 export const mapDispatchToProps = (
-  dispatch: ThunkDispatch<any, undefined, any>
+  dispatch: ThunkDispatch<RootState, undefined, Action<any>>
 ) => ({
   init: () => {
     dispatch(TodoListOperations.init());
+    dispatch(TodoListOperations.asuncInit());
   },
 
   handleSubmit: (formValue: string) => {
-    console.log(formValue);
-    dispatch(TodoListOperations.addTodo(formValue))
-  }
+    dispatch(TodoListOperations.addTodo(formValue));
+  },
 });
 
 export type DispatchProps = ReturnType<typeof mapDispatchToProps>;

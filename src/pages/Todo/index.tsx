@@ -17,26 +17,20 @@ class Todo extends React.Component<Props, State> {
   }
 
   componentDidMount() {
+    console.log('start')
     this.props.init();
-    console.log('init')
-    console.log(this.props)
-    console.log('init')
+    console.log('end')
   }
 
-  handleSubmit(formValue: {todo: string}) {
-    try{
+  handleSubmit(formValue: { todo: string }) {
+    try {
       this.props.handleSubmit(formValue.todo);
-    } catch(e){
-      console.log(e)
+    } catch (e) {
+      console.log(e);
     }
-    
-    console.log('---')
-    console.log(this.props)
-    console.log('---')
   }
 
   onChangeTodo(e: React.ChangeEvent<HTMLInputElement>) {
-    console.log(e);
     this.setState({
       todo: e.target.value,
     });
@@ -51,25 +45,21 @@ class Todo extends React.Component<Props, State> {
           onSubmit={(values) => this.handleSubmit(values)}
         >
           {(formik) => (
-              <form onSubmit={ formik.handleSubmit }>
-                <input
-                  name='todo'
-                  value={formik.values.todo}
-                  onChange={formik.handleChange}
-                />
-                <button type="submit">追加</button>
-              </form>
+            <form onSubmit={formik.handleSubmit}>
+              <input
+                name='todo'
+                value={formik.values.todo}
+                onChange={formik.handleChange}
+              />
+              <button type='submit'>追加</button>
+            </form>
           )}
         </Formik>
-        {console.log(this.props)}
-        {
-          this.props.todoList.todoList.length > 0 && this.props.todoList?.todoList?.map((todo, index) => (
+        {this.props.todoList.todoList.length > 0 &&
+          this.props.todoList?.todoList?.map((todo, index) => (
             // eslint-disable-next-line
-            <li key={index}>
-              {todo}
-            </li>
-          ))
-        }
+            <li key={index}>{todo}</li>
+          ))}
       </>
     );
   }

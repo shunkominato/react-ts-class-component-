@@ -7,21 +7,23 @@ export const initialState = {
 
 export type TodoListState = typeof initialState;
 
-export default (
-  state = initialState,
-  action: TodoListAction
-) => {
+export default (state = initialState, action: TodoListAction) => {
   switch (action.type) {
     case types.INIT:
-      console.log('@@')
+      console.log('init');
       return {
-        todoList: []
+        todoList: [],
+      };
+    case types.ASYNC_INIT:
+      console.log('async');
+      return {
+        todoList: [],
       };
     case types.ADD:
       console.log(state);
       return {
-        todoList: [...state.todoList, action.payload]
-      }
+        todoList: [...state.todoList, action.payload],
+      };
     default:
       return state;
   }

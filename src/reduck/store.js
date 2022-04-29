@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import thunk from 'redux-thunk';
 import * as reducers from './index';
 
@@ -19,4 +19,4 @@ export const store = createStore(
   applyMiddleware(thunk)
 );
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);
