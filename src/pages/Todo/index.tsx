@@ -16,9 +16,10 @@ class Todo extends React.Component<Props, State> {
     this.onChangeTodo = this.onChangeTodo.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount () {
     console.log('start')
-    this.props.init();
+     const ss = await this.props.init();
+     console.log(ss);
     console.log('end')
   }
 

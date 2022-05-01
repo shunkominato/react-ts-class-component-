@@ -16,9 +16,13 @@ export const mapStateToProps = (state: RootState): StateProps => ({
 export const mapDispatchToProps = (
   dispatch: ThunkDispatch<RootState, undefined, Action<any>>
 ) => ({
-  init: () => {
+  init: async () => {
+    console.log('111111');
     dispatch(TodoListOperations.init());
-    dispatch(TodoListOperations.asuncInit());
+    console.log('2222222');
+    await dispatch(TodoListOperations.asyncInit());
+    console.log('333333');
+    dispatch(TodoListOperations.init());
   },
 
   handleSubmit: (formValue: string) => {

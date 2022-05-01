@@ -5,9 +5,13 @@ export const init = () => ({
   type: types.INIT,
 });
 
-export const asyncInit = () => ({
+// export const asyncInit = () => ({
+//   type: types.ASYNC_INIT,
+// });
+
+export const asyncInit = {
   type: types.ASYNC_INIT,
-});
+};
 
 export const add = (todo: string) => ({
   type: types.ADD,
