@@ -25,7 +25,9 @@ class Todo extends React.Component<Props, State> {
 
   handleSubmit(formValue: { todo: string }) {
     try {
+      console.log(this.props.todoList.todoList);
       this.props.handleSubmit(formValue.todo);
+      console.log(this.props.todoList.todoList);
     } catch (e) {
       console.log(e);
     }
@@ -35,6 +37,7 @@ class Todo extends React.Component<Props, State> {
     this.setState({
       todo: e.target.value,
     });
+    console.log(this.state.todo);
   }
 
   render() {
