@@ -23,7 +23,7 @@ export const mapDispatchToProps = (
       type: "todoList/INIT",
     });
     console.log('2222222');
-    dispatch(TodoListOperations.asyncInit());
+    await dispatch(TodoListOperations.asyncInit());
     console.log('333333');
     dispatch(TodoListOperations.init());
   },

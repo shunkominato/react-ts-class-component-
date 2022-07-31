@@ -26,6 +26,7 @@ class Todo extends React.Component<Props, State> {
   handleSubmit(formValue: { todo: string }) {
     try {
       console.log(this.props.todoList.todoList);
+      // eslint-disable-next-line no-debugger
       this.props.handleSubmit(formValue.todo);
       console.log(this.props.todoList.todoList);
     } catch (e) {
